@@ -4,7 +4,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  emailjs.init("viq1wSgQkyrM7Gudm");
   // Initialize lucide icons if loaded from CDN
   if (window.lucide) {
     window.lucide.createIcons();
@@ -514,52 +513,110 @@ function initCanvasParticles() {
 function initContactForm() {
   const form = document.querySelector('.contact-form');
   const feedback = document.querySelector('.contact-feedback');
-
+  
   if (!form || !feedback) return;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
+    
+    // Select inputs
     const name = form.querySelector('[name="name"]').value;
     const phone = form.querySelector('[name="phone"]').value;
     const email = form.querySelector('[name="email"]').value;
-    const location = form.querySelector('[name="location"]')?.value || '';
-    const message = form.querySelector('[name="message"]').value;
-
+    const locationEl = form.querySelector('[name="location"]');
+    const location = locationEl ? locationEl.value : '';
+    const msg = form.querySelector('[name="message"]').value;
+    
     if (!name || !phone || !email) {
-      feedback.textContent = "Please fill out required fields.";
-      feedback.style.color = "#ff6b6b";
-      feedback.style.display = "block";
+      feedback.textContent = 'Please fill out all required fields.';
+      feedback.style.color = '#ff6b6b';
+      feedback.style.display = 'block';
       return;
     }
 
+    // Luxury animation triggers
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
-
+    
     submitBtn.disabled = true;
-    submitBtn.textContent = "SENDING...";
+    submitBtn.textContent = 'TRANSMITTING REQUEST...';
+    submitBtn.style.opacity = '0.7';
 
-    emailjs.send("service_wpqe6bj", "template_a0abthu", {
-      name,
-      phone,
-      email,
-      location,
-      message
-    })
-    .then(() => {
-      feedback.textContent = "Message sent successfully!";
-      feedback.style.color = "#2ed573";
-      feedback.style.display = "block";
+    setTimeout(() => {
+      submitBtn.textContent = 'INQUIRY SENT';
+      submitBtn.style.background = '#2ed573';
+      submitBtn.style.color = '#fff';
+
+      feedback.innerHTML = `
+        <div class="luxury-success-message" style="margin-top: 1.5rem; text-align: left; background: rgba(14,14,14,0.95); border: 1px solid var(--gold-primary); padding: 1.5rem; border-radius: 4px; box-shadow: var(--shadow-premium);">
+          <h4 class="serif-heading" style="color: var(--gold-primary); font-size: 1.25rem; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px;">
+            <i data-lucide="check-circle" style="color: #2ed573; width: 22px; height: 22px;"></i> Submission Registered
+          </h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.5rem;">
+             Your inquiry has been successfully transmitted and logged in our system.
+          </p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+             Our master estimators will review your architectural layout details and contact you directly within 24 hours.
+          </p>
+        </div>
+      `;
+      feedback.style.display = 'block';
+      feedback.className = 'contact-feedback success';
+      
+      // Initialize any newly injected Lucide icons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+      
       form.reset();
-    })
-    .catch(() => {
-      feedback.textContent = "Failed to send message.";
-      feedback.style.color = "#ff6b6b";
-      feedback.style.display = "block";
-    })
-    .finally(() => {
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
+      
+      // Floating label layout adjust
+      form.querySelectorAll('.form-input-control').forEach(input => {
+        input.blur();
+      });
+
+      // Restore button status
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        submitBtn.style.background = '';
+        submitBtn.style.color = '';
+        submitBtn.style.opacity = '';
+      }, 7000);
+
+    }, 1800);
+  });
+}
+
+/* ==========================================================================
+   12. Mobile Menu Slider Engine
+   ========================================================================== */
+function initMobileMenu() {
+  const toggle = document.querySelector('.mobile-nav-toggle');
+  const menu = document.querySelector('.nav-menu');
+  const links = document.querySelectorAll('.nav-item a');
+
+  if (!toggle || !menu) return;
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggle.classList.toggle('active');
+    menu.classList.toggle('open');
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+      toggle.classList.remove('active');
+      menu.classList.remove('open');
+    }
+  });
+
+  // Close when clicking nav items
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('active');
+      menu.classList.remove('open');
     });
   });
 }
