@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View our portfolio of luxury flooring masterpieces, stair runners, custom chevron oak layouts, and commercial carpeting installations.">
+  <title>Gallery Portfolio | Makki’s Carpet & Flooring</title>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-outline"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-logo">MAKKI'S</div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <header class="scrolled">
+    <div class="nav-container">
+      <a href="index.html" class="logo-brand">
+        <span class="logo-title">Makki’s</span>
+        <span class="logo-tagline">Carpet & Flooring</span>
+      </a>
+      
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="about.html">Our Story</a></li>
+        <li class="nav-item"><a href="services.html">Services</a></li>
+        <li class="nav-item active"><a href="portfolio.html">Portfolio</a></li>
+        <li class="nav-item"><a href="contact.html">Inquire</a></li>
+      </ul>
+
+      <div class="nav-contact-quick">
+        <a href="javascript:void(0)" class="nav-phone">413-435-7302</a>
+      </div>
+
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Title Banner -->
+  <section class="hero-section" style="min-height: 50vh; display: flex; align-items: center; padding-top: 10rem; background: #070707;">
+    <div class="hero-grid" style="grid-template-columns: 1fr; text-align: center;">
+      <div class="hero-content reveal-on-scroll active">
+        <span class="sans-heading">COMPLETED ARCHITECTURE</span>
+        <h1 class="hero-title serif-heading">The Gallery of Masterpieces</h1>
+        <p class="hero-desc" style="margin-left: auto; margin-right: auto; max-width: 650px;">
+          Explore wood finishes, intricate parquet layups, and plush wool borders executed across private estates.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Work Area -->
+  <section class="portfolio-section" style="background-color: var(--bg-primary); padding-top: 2rem;">
+    
+    <!-- Before & After Showcase -->
+    <div class="ba-showcase reveal-on-scroll" style="margin-bottom: 7rem;">
+      <div class="ba-wrapper">
+        <div class="ba-img-container ba-before">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80" alt="Subfloor Preparation">
+          <span class="ba-label">Before (Artisanal Prep)</span>
+        </div>
+        <div class="ba-img-container ba-after">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Bespoke finish">
+          <span class="ba-label">After (Bespoke Tile Overlay)</span>
+        </div>
+        <div class="ba-handle">
+          <div class="ba-button">
+            <div class="ba-button-arrows">
+              <span>❮</span><span>❯</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Filter Menu -->
+    <ul class="filter-menu reveal-on-scroll">
+      <li><button class="filter-btn active" data-filter="all">All Projects</button></li>
+      <li><button class="filter-btn" data-filter="wood">Hardwood & Timber</button></li>
+      <li><button class="filter-btn" data-filter="carpet">Exec Carpeting</button></li>
+      <li><button class="filter-btn" data-filter="commercial">Corporate Wear</button></li>
+    </ul>
+
+    <!-- Portfolio Custom Grid with Tall Aspect Variations -->
+    <div class="portfolio-grid reveal-group">
+      <!-- Item 1: Tall -->
+      <div class="portfolio-item item-tall" data-category="wood">
+        <div class="portfolio-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=800&q=80" alt="Herringbone French Oak Finish">
+        </div>
+        <div class="portfolio-overlay">
+          <span class="portfolio-category">Bespoke Timber</span>
+          <h4 class="portfolio-title">French Oak Chevron Estate</h4>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="portfolio-item" data-category="carpet">
+        <div class="portfolio-img-wrapper">
+          <img src="https://i.ibb.co/cc7Kqxyk/4500873e-19fc-4d12-99db-4bb48f63961c.jpg" alt="Bespoke Silk & Wool Carpet Layout">
+        </div>
+        <div class="portfolio-overlay">
+          <span class="portfolio-category">Executive Weave</span>
+          <h4 class="portfolio-title">TriBeCa Silk-Plush Penthouse</h4>
+        </div>
+      </div>
+
+      <!-- Item 3: Tall -->
+      <div class="portfolio-item item-tall" data-category="commercial">
+        <div class="portfolio-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="High Grade Office Lobby">
+        </div>
+        <div class="portfolio-overlay">
+          <span class="portfolio-category">Corporate Wear</span>
+          <h4 class="portfolio-title">Manhattan Boardroom Timber</h4>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="portfolio-item" data-category="wood">
+        <div class="portfolio-img-wrapper">
+          <img src="https://i.ibb.co/cc2Sqk0H/12a1a378-7c0d-43dc-aef0-fb88eac7d7d7.jpg" alt="Bespoke Walnut Slat Board">
+        </div>
+        <div class="portfolio-overlay">
+          <span class="portfolio-category">Classic Timber</span>
+          <h4 class="portfolio-title">American Walnut Private Villa</h4>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="portfolio-item" data-category="carpet">
+        <div class="portfolio-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Stair Runner custom layout">
+        </div>
+        <div class="portfolio-overlay">
+          <span class="portfolio-category">Artisan Rug</span>
+          <h4 class="portfolio-title">Sands Point Wool Stairways</h4>
+        </div>
+      </div>
+
+      <!-- Item 6: Tall -->
+      <div class="portfolio-item item-tall" data-category="wood">
+        <div class="portfolio-img-wrapper">
+          <img src="https://i.ibb.co/pvNMFsKS/4f7cafdc-bfe4-41c3-a2f7-6c0e82653e8f.jpg" alt="Modern Mansion Kitchen Planks">
+        </div>
+        <div class="portfolio-overlay">
+          <span class="portfolio-category">Premium Oak</span>
+          <h4 class="portfolio-title">Bergen County Sleek Planks</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-main-grid">
+      <div class="footer-description-col">
+        <a href="index.html" class="logo-brand footer-logo">
+          <span class="logo-title" style="font-size: 2.2rem;">Makki’s</span>
+          <span class="logo-tagline">Carpet & Flooring</span>
+        </a>
+        <p class="footer-brand-info">
+          Precision-sourced timber boards, custom dyed carpets, and micro-precision installations across New York, New Jersey, and Pennsylvania.
+        </p>
+        <div class="footer-social-wrapper">
+          <a class="social-circle-link" href="https://instagram.com/makkis_carpet_flooring" target="_blank" class="insta">
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" viewBox="0 0 24 24">
+<path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5A3.5 3.5 0 1 0 12 15.5 3.5 3.5 0 0 0 12 8.5zm5.25-2a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/>
+</svg>
+</a>
+          <a class="social-circle-link" href="javascript:void(0)" aria-label="Direct Phone"><i data-lucide="phone"></i></a>
+          <a class="social-circle-link" href="javascript:void(0)" aria-label="Direct Email"><i data-lucide="mail"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links-col">
+        <h5>Master Portfolio</h5>
+        <ul class="footer-links-tree">
+          <li class="footer-link-item"><a href="services.html#hardwood">Bespoke Hardwoods</a></li>
+          <li class="footer-link-item"><a href="services.html#carpet">Architectural Carpets</a></li>
+          <li class="footer-link-item"><a href="services.html#vinyl">LVT Luxury Vinyl</a></li>
+          <li class="footer-link-item"><a href="services.html#tile">Marble & Stone Tile</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h5>Atelier Info</h5>
+        <ul class="footer-links-tree">
+          <li class="footer-link-item"><a href="about.html">Our Story</a></li>
+          <li class="footer-link-item"><a href="services.html">The Finishes</a></li>
+          <li class="footer-link-item"><a href="portfolio.html">Gallery Masterpieces</a></li>
+          <li class="footer-link-item"><a href="contact.html">Reach Liaison</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h5>Direct Dispatch</h5>
+        <div class="footer-contact-item">
+          <i data-lucide="map-pin" class="footer-contact-icon"></i>
+          <span>Servicing New York, New Jersey, & Pennsylvania regions</span>
+        </div>
+        <div class="footer-contact-item">
+          <i data-lucide="phone" class="footer-contact-icon"></i>
+          <span><a href="tel:413-435-7302">413-435-7302</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <i data-lucide="mail" class="footer-contact-icon"></i>
+          <span><a href="mailto:Makkiflooring@gmail.com">Makkiflooring@gmail.com</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        &copy; 2026 Makki’s Carpet & Flooring. All architectural rights reserved.
+      </p>
+      <ul class="footer-legal-links">
+        <li><a href="#">Privacy Codes</a></li>
+        <li><a href="#">Fidelity Standards</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Back To Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to Top Scroll button">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>
